@@ -59,8 +59,8 @@ public class Svatky {
    * @return Den a měsíc, případně {@code null}, pokud jméno nebylo nalezeno.
    */
   public MonthDay kdyMaSvatek(String jmeno) {
-    //TODO
-    return null;
+    return svatky.get(jmeno);
+
   }
 
   /**
@@ -70,7 +70,8 @@ public class Svatky {
    */
   public boolean jeVSeznamu(String jmeno) {
     //TODO
-    return false;
+    return svatky.containsKey(jmeno);
+
   }
 
   /**
@@ -78,8 +79,7 @@ public class Svatky {
    * @return
    */
   public int getPocetJmen() {
-    //TODO
-    return 0;
+    return svatky.size();
   }
 
   /**
@@ -88,7 +88,7 @@ public class Svatky {
    */
   public Set<String> getSeznamJmen() {
     //TODO
-    return null;
+    return svatky.keySet();
   }
 
   /**
@@ -98,33 +98,37 @@ public class Svatky {
    */
   public void pridatSvatek(String jmeno, MonthDay denMesic) {
     //TODO
+    svatky.put(jmeno,denMesic);
   }
 
   /**
    * Přidá na seznam svátků nové jméno.
    * @param jmeno Jméno.
-   * @param den Den v měsíci, kd ymá dané jméno svátek (1–31).
+   * @param den Den v měsíci, kdy má dané jméno svátek (1–31).
    * @param mesic Měsíc, kdy má dané jméno svátek (1–12).
    */
   public void pridatSvatek(String jmeno, int den, int mesic) {
     //TODO
+    svatky.put(jmeno,MonthDay.of(mesic,den));
   }
 
   /**
    * Přidá na seznam svátků nové jméno.
    * @param jmeno Jméno.
-   * @param den Den v měsíci, kd ymá dané jméno svátek (1–31).
+   * @param den Den v měsíci, kdy má dané jméno svátek (1–31).
    * @param mesic Měsíc, kdy má dané jméno svátek.
    */
   public void pridatSvatek(String jmeno, int den, Month mesic) {
     //TODO
+    svatky.put(jmeno,MonthDay.of(mesic,den));
   }
 
   /**
-   * Smaže jméo ze seznamu svátků.
+   * Smaže jméno ze seznamu svátků.
    * @param jmeno Jméno ke smazání.
    */
   public void smazatSvatek(String jmeno) {
     //TODO
+    svatky.remove(jmeno);
   }
 }
