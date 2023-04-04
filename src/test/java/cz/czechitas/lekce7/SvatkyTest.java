@@ -78,7 +78,7 @@ class SvatkyTest {
         Svatky svatky = new Svatky();
         svatky.pridatSvatek("Dalibor", 4, Month.JUNE);
         assertTrue(svatky.jeVSeznamu("Dalibor"));
-        assertEquals(MonthDay.of(Month.JUNE, 1), svatky.kdyMaSvatek("Dalibor"));
+        assertEquals(MonthDay.of(Month.JUNE, 4), svatky.kdyMaSvatek("Dalibor"));
     }
 
     /**
